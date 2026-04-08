@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="GestionJuguetesApp/GestionJuguetesApp.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+  <Project Path="JugueteriaAppMaui/JugueteriaAppMaui.csproj" />
+</Solution>
