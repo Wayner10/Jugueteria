@@ -1,0 +1,40 @@
+﻿@page "/detalle-juguete/{id:int}"
+
+@using JugueteriaAppMaui.Juguete
+@using System.Linq
+@inject NavigationManager nav
+
+<h2 class="text-primary">🧸 Detalle del Juguete</h2>
+
+@if (juguete == null)
+{
+    <p>No encontrado</p>
+}
+else
+{
+    <div class="card shadow p-4" style="max-width: 400px;">
+        <img src="@juguete.ImagenUrl" style="width:100%; border-radius:10px; margin-bottom:10px;" />
+        <h4>@juguete.Nombre</h4>
+        <p><strong>Marca:</strong> @juguete.Marca</p>
+        <p><strong>Edad:</strong> @juguete.EdadRecomendada</p>
+
+        <button class="btn btn-secondary mt-3" @onclick="Volver">⬅️ Volver</button>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    JugueteCLS juguete;
+
+    protected override void OnInitialized()
+    {
+        juguete = JugueteListCLS.listaJuguetes.FirstOrDefault(x => x.Id == id);
+    }
+
+    void Volver()
+    {
+        nav.NavigateTo("/juguetes");
+    }
+}

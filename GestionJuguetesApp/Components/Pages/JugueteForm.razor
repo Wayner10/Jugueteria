@@ -1,0 +1,103 @@
+﻿@page "/agregar-juguete"
+@page "/agregar-juguete/{id:int}"
+
+@using JugueteriaAppMaui.Juguete
+@using System.Linq
+@inject NavigationManager nav
+
+<h3>Agregar / Editar Juguete</h3>
+
+<div>
+    <label>Nombre:</label>
+    <input @bind="juguete.Nombre" />
+</div>
+
+<div>
+    <label>Marca:</label>
+    <input @bind="juguete.Marca" />
+</div>
+
+<div>
+    <label>Edad Recomendada:</label>
+    <input @bind="juguete.EdadRecomendada" />
+</div>
+<div class="mb-2">
+    <label>Imagen</label>
+    <select class="form-control" @bind="juguete.ImagenUrl">
+        <option value="">-- Seleccionar imagen --</option>
+        <option value="barbie.png">Barbie</option>
+        <option value="hotwheel1.png">Hot Wheels</option>
+    </select>
+</div>
+<br />
+
+<button @onclick="Guardar">Guardar</button>
+
+@code {
+    [Parameter]
+    public int? id { get; set; }
+
+    JugueteCLS juguete = new JugueteCLS();
+
+    protected override void OnInitialized()
+    {
+        if (id != null)
+        {
+            var existente = JugueteListCLS.listaJuguetes
+                .FirstOrDefault(x => x.Id == id);
+
+            if (existente != null)
+            {
+                juguete = new JugueteCLS
+                {
+
+                    Id = existente.Id,
+                    Nombre = existente.Nombre,
+                    Marca = existente.Marca,
+                    EdadRecomendada = existente.EdadRecomendada
+                };
+            }
+        }
+    }
+
+    void Guardar()
+    {
+        var nombre = juguete.Nombre?.ToLower() ?? "";
+        var marca = juguete.Marca?.ToLower() ?? "";
+
+        if (nombre.Contains("carro") || marca.Contains("hot"))
+        {
+            juguete.ImagenUrl = "hotwheel1.png";
+        }
+        else if (nombre.Contains("muñeca") || nombre.Contains("barbie") || marca.Contains("barbie"))
+        {
+            juguete.ImagenUrl = "barbie.png";
+        }
+        else
+        {
+     
+            juguete.ImagenUrl = "default.png";
+        }
+
+        if (juguete.Id == 0)
+        {
+            juguete.Id = JugueteListCLS.listaJuguetes.Count + 1;
+            JugueteListCLS.listaJuguetes.Add(juguete);
+        }
+        else
+        {
+            var existente = JugueteListCLS.listaJuguetes
+                .FirstOrDefault(x => x.Id == juguete.Id);
+
+            if (existente != null)
+            {
+                existente.Nombre = juguete.Nombre;
+                existente.Marca = juguete.Marca;
+                existente.EdadRecomendada = juguete.EdadRecomendada;
+                existente.ImagenUrl = juguete.ImagenUrl;
+            }
+        }
+
+        nav.NavigateTo("/juguetes");
+    }
+}

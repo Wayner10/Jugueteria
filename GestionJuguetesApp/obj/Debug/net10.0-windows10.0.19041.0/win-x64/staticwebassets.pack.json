@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\wayner\\.nuget\\packages\\microsoft.aspnetcore.components.webview\\10.0.0\\staticwebassets\\blazor.modules.json",
+      "PackagePath": "staticwebassets\\_framework\\blazor.modules.json"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\.nuget\\packages\\microsoft.aspnetcore.components.webview\\10.0.0\\staticwebassets\\blazor.webview.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webview.js"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\scopedcss\\bundle\\GestionJuguetesApp.styles.css",
+      "PackagePath": "staticwebassets\\GestionJuguetesApp.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\Images\\barbie.png",
+      "PackagePath": "staticwebassets\\Images\\barbie.png"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\Images\\default.png",
+      "PackagePath": "staticwebassets\\Images\\default.png"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\Images\\hotwheel1.png",
+      "PackagePath": "staticwebassets\\Images\\hotwheel1.png"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\wayner\\Desktop\\GestionJuguetesApp\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\staticwebassets\\msbuild.GestionJuguetesApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\staticwebassets\\msbuild.GestionJuguetesApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\staticwebassets\\msbuild.build.GestionJuguetesApp.props",
+      "PackagePath": "build\\GestionJuguetesApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\staticwebassets\\msbuild.buildMultiTargeting.GestionJuguetesApp.props",
+      "PackagePath": "buildMultiTargeting\\GestionJuguetesApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net10.0-windows10.0.19041.0\\win-x64\\staticwebassets\\msbuild.buildTransitive.GestionJuguetesApp.props",
+      "PackagePath": "buildTransitive\\GestionJuguetesApp.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

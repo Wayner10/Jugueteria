@@ -1,0 +1,77 @@
+﻿@using System.Linq
+@inject NavigationManager nav
+@page "/juguetes"
+
+@using JugueteriaAppMaui.Juguete
+
+<h1>Lista de Juguetes</h1>
+
+@if (lista == null || lista.Count == 0)
+{
+    <p>No hay juguetes registrados.</p>
+}
+else
+{
+    <table class="table table-striped table-hover shadow">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Marca</th>
+                <th>Edad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var j in lista)
+            {
+                <tr>
+                    <td>@j.Id</td>
+
+                    <td>
+                        <img src="images/barbie.png"
+                             width="60" height="60"
+                             style="object-fit:cover; border-radius:10px;" />
+                    </td>
+
+                    <td>@j.Nombre</td>
+                    <td>@j.Marca</td>
+                    <td>@j.EdadRecomendada</td>
+
+                    <td>
+                        <button class="btn btn-warning btn-sm me-2" @onclick="() => Editar(j.Id)">✏️</button>
+                        <button class="btn btn-danger btn-sm" @onclick="() => Eliminar(j.Id)">🗑️</button>
+                        <button class="btn btn-info btn-sm ms-2" @onclick="() => VerDetalle(j.Id)">👁️</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    List<JugueteCLS> lista = new List<JugueteCLS>();
+
+    protected override void OnInitialized()
+    {
+        lista = JugueteListCLS.listaJuguetes;
+    }
+    void Eliminar(int id)
+    {
+        var juguete = lista.FirstOrDefault(x => x.Id == id);
+
+        if (juguete != null)
+        {
+            lista.Remove(juguete);
+        }
+    }
+    void Editar(int id)
+    {
+        nav.NavigateTo($"/agregar-juguete/{id}");
+    }
+    void VerDetalle(int id)
+    {
+        nav.NavigateTo($"/detalle-juguete/{id}");
+    }
+}
